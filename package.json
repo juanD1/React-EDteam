@@ -1,0 +1,35 @@
+{
+  "name": "react-edteam",
+  "version": "1.0.0",
+  "description": "siguiendo curso react desde cero EDteam dias free",
+  "main": "index.js",
+  "author": "Juan David Coronado Saldaña",
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/juanD1/React-EDtema#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanD1/React-EDtema.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juanD1/React-EDtema/issues"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "json-loader": "^0.5.7",
+    "react-hot-loader": "^3.1.3",
+    "style-loader": "^0.20.1",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

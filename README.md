@@ -1,2 +1,2 @@
-# React-EDtema
+# React-EDteam
 Siguiendo curso EDTeam free
