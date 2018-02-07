@@ -11,7 +11,7 @@ module.exports = {
         'react-hot-loader/patch', //Activa Hot Module Reloading HMR para React
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server', //solo estara detectando el Hot Reload, no el bundle final
-        './src/index.jsx'
+        './src/index.js'
     ],
     output: { //arrojar en bundle, archivo final
         path: endPath,
@@ -21,7 +21,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.js$/,
                 exclude: '/node-modules/', //para que solo busque lo importado, omitir node-modules
                 use: 'babel-loader'
             },

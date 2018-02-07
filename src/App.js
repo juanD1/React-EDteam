@@ -6,7 +6,7 @@ class App extends Component {
       return (
         <div>            
             <h1 className="title">Mi primer App en {this.props.name}</h1>
-            <img src="https://facebook.github.io/react/img/logo.svg" />            
+            <img src="https://cdn.worldvectorlogo.com/logos/react.svg" />            
         </div>
       )
     }
