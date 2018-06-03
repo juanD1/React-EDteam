@@ -22,16 +22,18 @@ class App extends Component {
   handleOnAddCourse(e){
     //alert("function Add Course")
     e.preventDefault() //no procesar el form    
-
+		let form = e.target
     let course = {
-      id: (e.target.id.value) ? e.target.id.value : App.defaultProps.id,
-      name: (e.target.name.value) ? e.target.name.value : App.defaultProps.name,
-      teacher: (e.target.teacher.value) ? e.target.teacher.value : App.defaultProps.teacher
+      id: (form.id.value) ? form.id.value : App.defaultProps.id,
+      name: (form.name.value) ? form.name.value : App.defaultProps.name,
+      teacher: (form.teacher.value) ? form.teacher.value : App.defaultProps.teacher
     }
 
     this.setState({
       courses: this.state.courses.concat([course])
-    })
+		})
+		
+		form.reset()
   }
 
   render() {
