@@ -1,7 +1,7 @@
 import React from 'react'
 import Course from './Course'
 
-const CoursesList = (props) => (   
+const CoursesList = (props) => (     //HIJO DINAMICO, CAMBIA EL CONTENIDO YA QUE POSEE MAS HIJOS
   <ul style={{textAlign: 'left'}}>
       {
        props.courses.map(course => (
