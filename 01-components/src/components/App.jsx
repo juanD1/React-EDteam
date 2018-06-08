@@ -19,7 +19,9 @@ class App extends Component {
     this.state = {
       courses: courses
     }
-    this.handleOnAddCourse = this.handleOnAddCourse.bind(this)
+		this.handleOnAddCourse = this.handleOnAddCourse.bind(this)
+		this.fetchData = this.fetchData.bind(this)
+		this.resetData = this.resetData.bind(this)
   }
 
   handleOnAddCourse(e){
@@ -37,23 +39,43 @@ class App extends Component {
 		})
 		
 		form.reset()
-  }
+	}
+	
+	fetchData(){
+		setTimeout(() => {
+			this.setState({ courses: courses})
+		}, 2000);
+	}
+
+	resetData(){
+		this.setState({ courses: [] })
+	}
 
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React aplication make Juanda</h1>
-        </header>
-        <p className="App-intro">
-          Juanda Coronado To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-        <CourseAddForm onAddCourse={this.handleOnAddCourse} />
-        <CoursesList courses={this.state.courses} />      
-      </div>  
-    );
+		if (!this.state.courses.length){
+			return(
+				<div>
+					<p>No hay cursos :(</p>
+						<button onClick={this.fetchData}>Cargar cursos</button>
+				</div>
+			)
+		} else {
+			return (
+				<div className="App">
+					<header className="App-header">
+						<img src={logo} className="App-logo" alt="logo" />
+						<h1 className="App-title">Welcome to React aplication make Juanda</h1>
+					</header>
+					<p className="App-intro">
+						Juanda Coronado To get started, edit <code>src/App.js</code> and save to reload.
+					</p>
+					
+					<CourseAddForm onAddCourse={this.handleOnAddCourse} />
+					<CoursesList courses={this.state.courses} />
+					<button onClick={this.resetData}>Borrar datos</button>   
+				</div>  
+			);
+		}		    
   }
 }
 
