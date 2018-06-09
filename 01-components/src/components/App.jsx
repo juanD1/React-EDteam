@@ -53,7 +53,7 @@ class App extends Component {
 			.fadeIn(2000)
 	}
 
-	resetData(){
+	resetData(){				
 		$('#root')
 			.fadeOut( 2000, () => this.setState({ courses: [] }) )
 			.fadeIn(2000)		
