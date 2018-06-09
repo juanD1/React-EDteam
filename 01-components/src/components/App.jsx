@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import uid from 'uid'
+import $ from 'jquery'
 //Data 
 import {courses} from '../data/courses.json'
 //Components
@@ -17,7 +18,8 @@ class App extends Component {
   constructor(...props) {
     super(...props)
     this.state = {
-      courses: courses
+			// courses: courses
+			courses: []
     }
 		this.handleOnAddCourse = this.handleOnAddCourse.bind(this)
 		this.fetchData = this.fetchData.bind(this)
@@ -40,15 +42,21 @@ class App extends Component {
 		
 		form.reset()
 	}
+
+	componentDidMount(){
+		this.fetchData()
+	}
 	
 	fetchData(){
-		setTimeout(() => {
-			this.setState({ courses: courses})
-		}, 2000);
+		$('#root')
+			.fadeOut( 2000, () => this.setState({ courses: courses}) )
+			.fadeIn(2000)
 	}
 
 	resetData(){
-		this.setState({ courses: [] })
+		$('#root')
+			.fadeOut( 2000, () => this.setState({ courses: [] }) )
+			.fadeIn(2000)		
 	}
 
   render() {
@@ -56,7 +64,7 @@ class App extends Component {
 			return(
 				<div>
 					<p>No hay cursos :(</p>
-						<button onClick={this.fetchData}>Cargar cursos</button>
+					<button onClick={this.fetchData}>Cargar cursos</button>
 				</div>
 			)
 		} else {
@@ -70,8 +78,8 @@ class App extends Component {
 						Juanda Coronado To get started, edit <code>src/App.js</code> and save to reload.
 					</p>
 					
-					<CourseAddForm onAddCourse={this.handleOnAddCourse} />
-					<CoursesList courses={this.state.courses} />
+					<CourseAddForm onAddCourse={this.handleOnAddCourse} /> &nbsp;			
+					<CoursesList courses={this.state.courses} /> &nbsp;
 					<button onClick={this.resetData}>Borrar datos</button>   
 				</div>  
 			);
