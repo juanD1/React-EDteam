@@ -26,8 +26,7 @@ class App extends Component {
 		this.resetData = this.resetData.bind(this)
   }
 
-  handleOnAddCourse(e){
-    //alert("function Add Course")
+  handleOnAddCourse(e){    
     e.preventDefault() //no procesar el form    
 		let form = e.target
     let course = {
