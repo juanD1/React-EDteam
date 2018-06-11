@@ -8,7 +8,22 @@ import {
 } from 'react-router-dom'
 
 const StaticSite = () => (
-	<h1>Primeros pasos con React Router Dom</h1>
+	<BrowserRouter>
+		<div>
+			<h1>Primeros pasos con React Router Dom</h1>
+			<ul>
+				<li><Link to='/'>Home</Link></li>
+				<li><Link to='/acerca'>Acerca</Link></li>
+				<li><Link to='/servicios'>Servicios</Link></li>
+				<li><Link to='/contacto'>Contacto</Link></li>
+			</ul>
+			<hr/>
+			<Route path='/' component={Home} />		
+			<Route path='/acerca' component={Acerca} />		
+			<Route path='/servicios' component={Servicios} />		
+			<Route path='/contacto' component={Contacto} />
+		</div>		
+	</BrowserRouter>	
 )
 
 const Home = () => (
