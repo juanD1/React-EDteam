@@ -48,6 +48,7 @@ const Servicios = () => (
 const Contacto = ( { match } ) => (
 	<div>		
 		<h2>Informacion de Contacto</h2>
+		<Route path={`${match.url}/:contactoInfo`} component={InfoContacto} />
 		<Route exact path={match.url} render={() => (
 			<h3> mantente en contacto conmigo :D</h3>
 		)}/>
@@ -55,11 +56,15 @@ const Contacto = ( { match } ) => (
 			<li><Link to={`${match.url}/email`}>Email</Link></li>
 		</ul>
 		<Route path={`${match.url}/email`} render={()=> (
-			<a href='https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1528687383&rver=7.0.6736.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26RpsCsrfState%3d0273f059-06d6-7794-c2a5-1744b24da6ce&id=292841&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015' target='_blank'>jonmircha@gmail.com</a>
+			<a href='https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1528687383&rver=7.0.6736.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26RpsCsrfState%3d0273f059-06d6-7794-c2a5-1744b24da6ce&id=292841&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015' target='_blank' rel='noopener noreferrer'>jonmircha@gmail.com</a>
 		)} />
 	</div>
 )
 
-
+const InfoContacto = ({ match }) => (
+	<div>
+		<h3>{match.params.contactoInfo}</h3>
+	</div>
+)
 
 export default StaticSite
