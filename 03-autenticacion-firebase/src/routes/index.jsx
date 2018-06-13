@@ -13,6 +13,13 @@ import { firebaseAuth } from '../data/config'
 import 'pure-css'
 import './css/index.css'
 import EDteamLogo from '../images/edteam-logo.png'
+//Components
+import Home from '../pages/'
+import About from '../pages/About'
+import Error404 from '../pages/Error404'
+import Login from '../pages/Login'
+import Register from '../pages/Register'
+import Protegida from '../pages/protected'
 
 class App extends Component {
 
@@ -49,17 +56,9 @@ class App extends Component {
 						<div className="pure-menu pure-menu-horizontal pure-menu-scrollable custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
 								<div className="custom-menu-screen"></div>
 								<ul className="pure-menu-list">
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">Home</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">About</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">Contact</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">Blog</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">GitHub</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">Twitter</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">Apple</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">Google</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">Wang</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">Yahoo</a></li>
-									<li className="pure-menu-item"><a href="#" className="pure-menu-link">W3C</a></li>
+									<li className="pure-menu-item">
+										<Link to='/' className="pure-menu-link" onClick={this.handleOnClick}>Home</Link>
+									</li>
 								</ul>
 						</div>
 					</header>
