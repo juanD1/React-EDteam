@@ -87,7 +87,7 @@
 	-ms-transition: all 0.5s;
 	transition: all 0.5s;
 	height: 3em;
-	width: 70em;
+	width: 62em;		
 	position: absolute;
 	top: 0;
 	z-index: -1;
@@ -97,12 +97,12 @@
 	-webkit-transform: translateY(-44px);
 	-moz-transform: translateY(-44px);
 	-ms-transform: translateY(-44px);
-	transform: translateY(-44px);
+	transform: translateY(-44px);	
 }
 
 @media (max-width: 62em) {
 	.custom-menu {
-		display: block;
+		display: block;		
 	}
 
 	.custom-menu-toggle {
@@ -112,7 +112,7 @@
 
 	.custom-menu-bottom {
 		position: absolute;
-		width: 100%;
+		width: 100%;		
 		border-top: 1px solid #eee;
 		background-color: #808080/9;
 		z-index: 100;
@@ -145,4 +145,8 @@
 		position: absolute;
 		overflow: hidden;
 	}
+}
+
+.Main {
+	padding: 5px;
 }

@@ -59,11 +59,25 @@ class App extends Component {
 									<li className="pure-menu-item">
 										<Link to='/' className="pure-menu-link" onClick={this.handleOnClick}>Home</Link>
 									</li>
+									<li className="pure-menu-item">
+										<Link to='/acerca' className="pure-menu-link" onClick={this.handleOnClick}>Acerca</Link>
+									</li>
+									<li className="pure-menu-item">
+										<Link to='/registro' className="pure-menu-link" onClick={this.handleOnClick}>Registro</Link>
+									</li>
+									<li className="pure-menu-item">
+										<Link to='/login' className="pure-menu-link" onClick={this.handleOnClick}>Login</Link>
+									</li>
 								</ul>
 						</div>
 					</header>
 					<main className='Main'>
 						<Switch>
+							<Route path='/' exact component={Home}/>
+							<Route path='/acerca' component={About}/>
+							<Route path='/registro' component={Register}/>
+							<Route path='/login' component={Login}/>
+							<Route component={Error404} />
 						</Switch>
 					</main>
 				</div>
