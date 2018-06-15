@@ -1,6 +1,6 @@
 import { firebaseAuth, ref } from '.././data/config' //method interactive with firebase
 
-const saveUser (user) => (
+const saveUser = (user) => (
 	ref
 		.child()
 		.set({})
