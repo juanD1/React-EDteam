@@ -9,6 +9,8 @@ const config = {
   storageBucket: "",
   messagingSenderId: "870805927455"
 };
+
 firebase.initializeApp(config)
 
-export const firebaseAuth = firebase.auth
+export const ref = firebase.database().ref() // crear o almacenar info
+export const firebaseAuth = firebase.auth //objet of authentication
