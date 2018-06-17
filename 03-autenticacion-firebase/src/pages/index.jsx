@@ -5,6 +5,7 @@ class Home extends Component {
 		return (
 			<article className='Main-container'>
 				<h1>Seccion de inicio</h1>
+				<h2>Bienvenido</h2>
 			</article>
 		)
 	}
