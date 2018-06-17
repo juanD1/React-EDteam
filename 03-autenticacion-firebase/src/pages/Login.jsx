@@ -12,7 +12,7 @@ class Login extends Component {
 
 	handleOnSubmit(e) {
 		e.preventDefault()
-		alert('Enviando formulario')
+		alert('Enviando formulario...')
 		login( this.email.value , this.password.value)
 			.catch(error => this.setState( this.setErrorMessage('Usuario o Password incorrectos')))
 	}
