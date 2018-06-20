@@ -8,7 +8,7 @@ import {
   withRouter, //Switch para modificar el valor de una ruta
   Switch
 } from "react-router-dom";
-import { firebaseAuth } from "../data/config";
+import { firebaseAuth } from "../data/config"; //config of firebase
 //Assets
 import "pure-css";
 import "./css/index.css";
