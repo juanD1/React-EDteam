@@ -21,6 +21,30 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Protegida from "../pages/protected";
 
+const PrivateRoute = ({ component: Component, authed, rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      authed === true ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{ pathname: "/login", state: { from: props.location } }}
+        />
+      )
+    }
+  />
+);
+
+const PublicRoute = ({ component: Component, authed, rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      authed === false ? <Component {...props} /> : <Redirect to="/cursos" />
+    }
+  />
+);
+
 class App extends Component {
   constructor(props) {
     super(props);
