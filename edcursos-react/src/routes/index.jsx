@@ -21,6 +21,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Protegida from "../pages/protected";
 
+//Setting private route
 const PrivateRoute = ({ component: Component, authed, rest }) => (
   <Route
     {...rest}
