@@ -13,14 +13,16 @@ class Login extends Component {
     this.state = { loginMessage: null };
 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
+    this.setMessage = this.setMessage.bind(this);
     this.resetPassword = this.resetPassword.bind(this);
   }
 
   handleOnSubmit(e) {
     e.preventDefault();
-    alert("Enviando formulario...");
-    login(this.email.value, this.password.value).catch(error =>
-      this.setState(this.setMessage("Usuario o Password incorrectos"))
+    login(this.email.value, this.password.value).catch(err =>
+      this.setState(
+        this.setMessage(`Usuario o Password incorrectos: ${err.message}`)
+      )
     );
   }
 
