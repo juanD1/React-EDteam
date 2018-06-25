@@ -60,7 +60,10 @@ class App extends Component {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
-  handleOnClick() {
+  handleOnClick(e) {
+    if (e.target === document.getElementById("toggle")) {
+      e.preventDefault();
+    }
     document
       .getElementById("tuckedMenu")
       .classList.toggle("custom-menu-tucked");
@@ -81,11 +84,11 @@ class App extends Component {
         <div>
           <header className="custom-menu-wrapper">
             <div className="pure-menu custom-menu custom-menu-top">
-              <a href="#" className="pure-menu-heading custom-menu-brand">
+              <a role="button" className="pure-menu-heading custom-menu-brand">
                 <img src={EDteamLogo} alt="EDteam" />
               </a>
               <a
-                href="#"
+                role="button"
                 className="custom-menu-toggle"
                 id="toggle"
                 onClick={this.handleOnClick}
