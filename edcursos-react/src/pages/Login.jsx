@@ -1,6 +1,10 @@
 //Dependencies
 import React, { Component } from "react";
 import { login } from ".././helpers/Auth";
+//Assets
+import "pure-css/lib/forms.css";
+import "pure-css/lib/buttons.css";
+import "./login-register.css";
 
 class Login extends Component {
   constructor(props) {

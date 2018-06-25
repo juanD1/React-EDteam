@@ -170,11 +170,7 @@ class App extends Component {
           <main className="Main">
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route
-                authed={this.state.authed}
-                path="/acerca"
-                component={About}
-              />
+              <Route path="/acerca" component={About} />
               <PublicRoute
                 authed={this.state.authed}
                 path="/login"
