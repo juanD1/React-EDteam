@@ -19,7 +19,7 @@ import About from "../pages/About";
 import Error404 from "../pages/Error404";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Protegida from "../pages/protected";
+import DashboardCourses from "../pages/DashboardCourses";
 
 //Setting private route
 const PrivateRoute = ({ component: Component, authed, rest }) => (
@@ -134,9 +134,26 @@ class App extends Component {
           <main className="Main">
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/acerca" component={About} />
-              <Route path="/registro" component={Register} />
-              <Route path="/login" component={Login} />
+              <Route
+                authed={this.state.authed}
+                path="/acerca"
+                component={About}
+              />
+              <PublicRoute
+                authed={this.state.authed}
+                path="/login"
+                component={Login}
+              />
+              <PublicRoute
+                authed={this.state.authed}
+                path="/registro"
+                component={Register}
+              />
+              <PrivateRoute
+                authed={this.state.authed}
+                path="/cursos"
+                component={DashboardCourses}
+              />
               <Route component={Error404} />
             </Switch>
           </main>
