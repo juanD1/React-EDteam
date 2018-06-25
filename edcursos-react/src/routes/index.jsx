@@ -9,6 +9,7 @@ import {
   Switch
 } from "react-router-dom";
 import { firebaseAuth } from "../data/config"; //config of firebase
+import { logout } from "../helpers/Auth";
 //Assets
 import "pure-css";
 import "./css/index.css";
@@ -19,7 +20,7 @@ import About from "../pages/About";
 import Error404 from "../pages/Error404";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import DashboardCourses from "../pages/DashboardCourses";
+import DashboardCourses from "../pages/protected/DashboardCourses";
 
 //Setting private route
 const PrivateRoute = ({ component: Component, authed, rest }) => (
@@ -56,6 +57,7 @@ class App extends Component {
     };
 
     this.handleOnClick = this.handleOnClick.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleOnClick() {
@@ -63,6 +65,12 @@ class App extends Component {
       .getElementById("tuckedMenu")
       .classList.toggle("custom-menu-tucked");
     document.getElementById("toggle").classList.toggle("x");
+  }
+
+  handleLogout() {
+    logout();
+    this.setState({ authed: false });
+    this.handleOnClick();
   }
 
   render() {
@@ -110,24 +118,49 @@ class App extends Component {
                     Acerca
                   </Link>
                 </li>
-                <li className="pure-menu-item">
-                  <Link
-                    to="/registro"
-                    className="pure-menu-link"
-                    onClick={this.handleOnClick}
-                  >
-                    Registro
-                  </Link>
-                </li>
-                <li className="pure-menu-item">
-                  <Link
-                    to="/login"
-                    className="pure-menu-link"
-                    onClick={this.handleOnClick}
-                  >
-                    Login
-                  </Link>
-                </li>
+                {this.state.authed ? (
+                  <span>
+                    <li className="pure-menu-item">
+                      <Link
+                        to="/cursos"
+                        className="pure-menu-link"
+                        onClick={this.handleOnClick}
+                      >
+                        Cursos
+                      </Link>
+                    </li>
+                    <li className="pure-menu-item">
+                      <Link
+                        to="/logout"
+                        className="pure-menu-link"
+                        onClick={this.handleLogout}
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                  </span>
+                ) : (
+                  <span>
+                    <li className="pure-menu-item">
+                      <Link
+                        to="/registro"
+                        className="pure-menu-link"
+                        onClick={this.handleOnClick}
+                      >
+                        Registro
+                      </Link>
+                    </li>
+                    <li className="pure-menu-item">
+                      <Link
+                        to="/login"
+                        className="pure-menu-link"
+                        onClick={this.handleOnClick}
+                      >
+                        Login
+                      </Link>
+                    </li>
+                  </span>
+                )}
               </ul>
             </div>
           </header>
