@@ -67,7 +67,11 @@ class Login extends Component {
             <div className="u-error">
               <p>
                 Error:&nbsp;&nbsp;{this.state.loginMessage},&nbsp;
-                <a href="#" onClick={this.resetPassword} className="alert-Link">
+                <a
+                  role="button"
+                  onClick={this.resetPassword}
+                  className="alert-Link"
+                >
                   ¿Olvidaste tu constraseña?
                 </a>
               </p>

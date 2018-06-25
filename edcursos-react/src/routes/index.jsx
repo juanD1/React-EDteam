@@ -5,7 +5,6 @@ import {
   Route, //Manejo de rutas
   Link, //Manejo de enlaces
   Redirect, //Manejo de redirecciones
-  withRouter, //Switch para modificar el valor de una ruta
   Switch
 } from "react-router-dom";
 import { firebaseAuth } from "../data/config"; //config of firebase
@@ -70,6 +69,27 @@ class App extends Component {
     document.getElementById("toggle").classList.toggle("x");
   }
 
+  componentDidMount() {
+    //Listener onAuthStateChanged is all time verifing that state auth is true
+    this.removeListener = firebaseAuth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({
+          authed: true,
+          loading: false
+        });
+      } else {
+        this.setState({
+          loading: false
+        });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    //when destroyed the sesion
+    this.removeListener();
+  }
+
   handleLogout() {
     logout();
     this.setState({ authed: false });
@@ -77,7 +97,7 @@ class App extends Component {
   }
 
   render() {
-    return this.state.loading === false ? (
+    return this.state.loading === true ? (
       <h1>Cargando...</h1>
     ) : (
       <BrowserRouter>
