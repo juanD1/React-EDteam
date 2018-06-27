@@ -1,5 +1,15 @@
+.Main-container {
+  padding: 1rem;
+}
+
+.edteam-logo {
+  display: block;
+  margin: auto;
+  width: auto;
+  max-height: 3rem;
+}
 .custom-menu-wrapper {
-  background-color: #808080;
+  background-color: #0447e4; /*I love this color*/
   margin-bottom: 2.5em;
   white-space: nowrap;
   position: relative;
@@ -81,7 +91,7 @@
 }
 
 .custom-menu-screen {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #0447e4; /*rgba(0, 0, 0, 0.5);*/
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -114,7 +124,7 @@
     position: absolute;
     width: 100%;
     border-top: 1px solid #eee;
-    background-color: #808080/9;
+    background-color: #0447e4/9;
     z-index: 100;
   }
 

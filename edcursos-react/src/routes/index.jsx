@@ -105,7 +105,7 @@ class App extends Component {
           <header className="custom-menu-wrapper">
             <div className="pure-menu custom-menu custom-menu-top">
               <a role="button" className="pure-menu-heading custom-menu-brand">
-                <img src={EDteamLogo} alt="EDteam" />
+                <img className="edteam-logo" src={EDteamLogo} alt="EDteam" />
               </a>
               <a
                 role="button"
