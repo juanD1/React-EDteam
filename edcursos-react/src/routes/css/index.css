@@ -8,8 +8,9 @@
   width: auto;
   max-height: 3rem;
 }
+
 .custom-menu-wrapper {
-  background-color: #0447e4; /*I love this color*/
+  background-color: #0447e4;
   margin-bottom: 2.5em;
   white-space: nowrap;
   position: relative;
@@ -91,13 +92,13 @@
 }
 
 .custom-menu-screen {
-  background-color: #0447e4; /*rgba(0, 0, 0, 0.5);*/
+  background-color: #0447e4;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
   height: 3em;
-  width: 62em;
+  width: 70em;
   position: absolute;
   top: 0;
   z-index: -1;
@@ -110,7 +111,7 @@
   transform: translateY(-44px);
 }
 
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   .custom-menu {
     display: block;
   }
@@ -155,8 +156,4 @@
     position: absolute;
     overflow: hidden;
   }
-}
-
-.Main {
-  padding: 5px;
 }
