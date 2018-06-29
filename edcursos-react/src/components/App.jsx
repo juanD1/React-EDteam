@@ -3,7 +3,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import uid from "uid";
-import $ from "jquery";
 //Data
 import { courses } from "../data/courses.json";
 //Components
@@ -48,15 +47,11 @@ class App extends Component {
   }
 
   fetchData() {
-    $("#root")
-      .fadeOut(2000, () => this.setState({ courses: courses }))
-      .fadeIn(2000);
+    this.setState({ courses: courses });
   }
 
   resetData() {
-    $("#root")
-      .fadeOut(2000, () => this.setState({ courses: [] }))
-      .fadeIn(2000);
+    this.setState({ courses: [] });
   }
 
   render() {
