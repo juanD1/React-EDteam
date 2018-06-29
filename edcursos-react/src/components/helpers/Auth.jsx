@@ -1,4 +1,4 @@
-import { firebaseAuth, ref } from ".././data/config"; //method interactive with firebase
+import { firebaseAuth, ref } from "../../data/config"; //method interactive with firebase
 
 const saveUser = user =>
   ref

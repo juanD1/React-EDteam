@@ -7,7 +7,7 @@ import {
   Redirect, //Manejo de redirecciones
   Switch
 } from "react-router-dom";
-import { firebaseAuth } from "../data/config"; //config of firebase
+import { firebaseAuth } from "../../data/config"; //config of firebase
 import { logout } from "../helpers/Auth";
 //Assets
 import "pure-css";
