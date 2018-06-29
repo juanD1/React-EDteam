@@ -4,12 +4,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import uid from "uid";
 //Data
-import { courses } from "../data/courses.json";
+import { courses } from "../../data/courses.json";
 //Components
 import CourseAddForm from "./CourseAddForm";
 import CoursesList from "./CoursesList";
 //Assets
-import logo from "../logo.svg";
+import logo from "../../logo.svg";
 import "./App.css";
 
 class App extends Component {

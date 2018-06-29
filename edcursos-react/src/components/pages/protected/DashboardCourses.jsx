@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import App from "../../components/App";
+import App from "../../components/Courses/App";
 
 class Protegida extends Component {
   render() {
