@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import uid from "uid";
 //Data
-import { categories, courses, teachers } from "../../data/";
+import { courses } from "../../data/";
 //Components
 import CourseAddForm from "./CourseAddForm";
 import CoursesList from "./CoursesList";

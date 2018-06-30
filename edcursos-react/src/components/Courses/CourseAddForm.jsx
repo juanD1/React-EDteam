@@ -9,6 +9,10 @@ const optionsTeaches = teachers.map(teacher =>
   Object.assign({}, { label: teacher, value: teacher })
 );
 
+const optionsCategories = categories.map(category =>
+  Object.assign({}, { label: category, value: category })
+);
+
 const CourseAddForm = (
   props //COMPONENTE SIN ESTADO- REPRESENTACIONALES
 ) => (
@@ -19,6 +23,11 @@ const CourseAddForm = (
       name="teacher"
       placeholder="Elige el profesor(es) del curso"
       options={optionsTeaches}
+    />
+    <MultiSelect
+      name="category"
+      placeholder="Elige el profesor(es) del curso"
+      options={optionsCategories}
     />
     <Calendar name="date" />
     <input type="submit" value="Guardar" />
