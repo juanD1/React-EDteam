@@ -23,8 +23,8 @@ export class Calendar extends Component {
       <DatePicker
         selected={this.state.starDate}
         onChange={this.handleChange}
-        placeholder="Fecha"
         isClearable={true}
+        placeholderText="Fecha"
         dateFormat="DD/MM/YYYY"
         name={this.props.name}
       />

@@ -8,8 +8,6 @@ import { categories, courses, teachers } from "../../data/";
 //Components
 import CourseAddForm from "./CourseAddForm";
 import CoursesList from "./CoursesList";
-//Assets
-import "./App.css";
 
 class App extends Component {
   constructor(...props) {
@@ -63,7 +61,7 @@ class App extends Component {
       );
     } else {
       return (
-        <div className="App">
+        <div>
           <CourseAddForm onAddCourse={this.handleOnAddCourse} /> &nbsp;
           <CoursesList courses={this.state.courses} /> &nbsp;
           <button onClick={this.resetData}>Borrar datos</button>
