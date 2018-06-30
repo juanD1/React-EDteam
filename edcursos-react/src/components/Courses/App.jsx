@@ -13,12 +13,9 @@ class App extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
-      // courses: courses
-      courses: []
+      courses: courses
     };
     this.handleOnAddCourse = this.handleOnAddCourse.bind(this);
-    this.fetchData = this.fetchData.bind(this);
-    this.resetData = this.resetData.bind(this);
   }
 
   handleOnAddCourse(e) {
@@ -37,18 +34,6 @@ class App extends Component {
     });
 
     form.reset();
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  fetchData() {
-    this.setState({ courses: courses });
-  }
-
-  resetData() {
-    this.setState({ courses: [] });
   }
 
   render() {

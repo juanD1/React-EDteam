@@ -8,7 +8,7 @@ import MultiSelect from "./MultiSelect";
 //Assents
 import "pure-css/lib/forms.css";
 import "pure-css/lib/buttons.css";
-import "./css/course-add-form.css";
+import "./css/courses-add-form.css";
 
 const optionsTeaches = teachers.map(teacher =>
   Object.assign({}, { label: teacher, value: teacher })
