@@ -4,12 +4,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import uid from "uid";
 //Data
-import { courses } from "../../data/courses.json";
+import { categories, courses, teachers } from "../../data/";
 //Components
 import CourseAddForm from "./CourseAddForm";
 import CoursesList from "./CoursesList";
 //Assets
-import logo from "../../logo.svg";
 import "./App.css";
 
 class App extends Component {
@@ -65,16 +64,6 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">
-              Welcome to React aplication make Juanda
-            </h1>
-          </header>
-          <p className="App-intro">
-            Juanda Coronado To get started, edit <code>src/App.js</code> and
-            save to reload.
-          </p>
           <CourseAddForm onAddCourse={this.handleOnAddCourse} /> &nbsp;
           <CoursesList courses={this.state.courses} /> &nbsp;
           <button onClick={this.resetData}>Borrar datos</button>
