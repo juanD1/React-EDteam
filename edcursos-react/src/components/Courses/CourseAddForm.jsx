@@ -3,8 +3,8 @@ import React from "react";
 import uid from "uid";
 import { categories, teachers } from "../../data/";
 //Components
-import Calendar from "./Calendar";
-import MultiSelect from "./MultiSelect";
+import Calendar from "./global/Calendar";
+import MultiSelect from "./global/MultiSelect";
 //Assents
 import "pure-css/lib/forms.css";
 import "pure-css/lib/buttons.css";

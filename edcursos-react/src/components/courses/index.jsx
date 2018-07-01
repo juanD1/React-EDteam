@@ -8,6 +8,7 @@ import { categories, courses, teachers } from "../../data/";
 //Components
 import CourseAddForm from "./CourseAddForm";
 import CoursesList from "./CoursesList";
+import Loader from "./global/Loader";
 
 class Courses extends Component {
   constructor(...props) {
@@ -60,6 +61,7 @@ class Courses extends Component {
       return (
         <article className="Main-container">
           <CourseAddForm onAddCourse={this.handleOnAddCourse} />
+          <Loader />
           <CoursesList courses={this.state.courses} />
         </article>
       );
