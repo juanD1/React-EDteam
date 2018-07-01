@@ -39,18 +39,17 @@ class App extends Component {
   render() {
     if (!this.state.courses.length) {
       return (
-        <div>
+        <article className="Main-container">
           <p>No hay cursos :(</p>
           <button onClick={this.fetchData}>Cargar cursos</button>
-        </div>
+        </article>
       );
     } else {
       return (
-        <div>
+        <article className="Main-container">
           <CourseAddForm onAddCourse={this.handleOnAddCourse} /> &nbsp;
           <CoursesList courses={this.state.courses} /> &nbsp;
-          <button onClick={this.resetData}>Borrar datos</button>
-        </div>
+        </article>
       );
     }
   }

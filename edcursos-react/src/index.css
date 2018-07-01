@@ -1,5 +1,38 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+  background-color: #eee;
+}
+
 body {
+  overflow-x: hidden;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+
+a {
+  color: #004b76;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+a:hover {
+  color: #61dafb;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+mark {
+  color: #fff;
+  background-color: #cc7a6f;
 }
