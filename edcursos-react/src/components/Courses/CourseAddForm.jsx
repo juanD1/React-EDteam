@@ -33,7 +33,7 @@ const CourseAddForm = (
       options={optionsTeaches}
     />
     <MultiSelect
-      name="category"
+      name="categories"
       placeholder="Elige el profesor(es) del curso"
       options={optionsCategories}
     />
