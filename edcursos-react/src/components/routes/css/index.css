@@ -10,7 +10,7 @@
 }
 
 .custom-menu-wrapper {
-  background-color: #0447e4;
+  background-color: #2279d7;
   margin-bottom: 2.5em;
   white-space: nowrap;
   position: relative;
@@ -92,7 +92,7 @@
 }
 
 .custom-menu-screen {
-  background-color: #0447e4;
+  background-color: #2279d7;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -125,7 +125,7 @@
     position: absolute;
     width: 100%;
     border-top: 1px solid #eee;
-    background-color: #0447e4/9;
+    background-color: #2279d7/9;
     z-index: 100;
   }
 

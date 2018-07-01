@@ -98,7 +98,7 @@ class App extends Component {
 
   render() {
     return this.state.loading === true ? (
-      <h1>Cargando...</h1>
+      <h1>cargando...</h1>
     ) : (
       <BrowserRouter>
         <div>

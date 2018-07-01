@@ -16,7 +16,8 @@ class Courses extends Component {
     this.state = {
       courses: courses,
       categories: categories,
-      teachers: teachers
+      teachers: teachers,
+      isLoading: false
     };
     this.handleOnAddCourse = this.handleOnAddCourse.bind(this);
   }
@@ -44,7 +45,8 @@ class Courses extends Component {
     };
 
     this.setState({
-      courses: this.state.courses.concat([course])
+      courses: this.state.courses.concat([course]),
+      isLoading: true
     });
 
     form.reset();
@@ -58,13 +60,19 @@ class Courses extends Component {
         </article>
       );
     } else {
-      return (
-        <article className="Main-container">
-          <CourseAddForm onAddCourse={this.handleOnAddCourse} />
-          <Loader />
-          <CoursesList courses={this.state.courses} />
-        </article>
-      );
+      if (this.state.isLoading) {
+        setTimeout(() => {
+          this.setState({ isLoading: false });
+        }, 2500);
+        return <Loader />;
+      } else {
+        return (
+          <article className="Main-container">
+            <CourseAddForm onAddCourse={this.handleOnAddCourse} />
+            <CoursesList courses={this.state.courses} />
+          </article>
+        );
+      }
     }
   }
 }
