@@ -20,6 +20,7 @@ import Error404 from "../pages/Error404";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import DashboardCourses from "../pages/protected/DashboardCourses";
+import Loader from "../courses/global/Loader";
 
 //Setting private route
 const PrivateRoute = ({ component: Component, authed, rest }) => (
@@ -73,14 +74,20 @@ class App extends Component {
     //Listener onAuthStateChanged is all time verifing that state auth is true
     this.removeListener = firebaseAuth().onAuthStateChanged(user => {
       if (user) {
-        this.setState({
-          authed: true,
-          loading: false
-        });
+        setTimeout(() => {
+          console.log("en el login");
+          this.setState({
+            authed: true,
+            loading: false
+          });
+        }, 2500);
+        this.setState({ loading: false });
       } else {
-        this.setState({
-          loading: false
-        });
+        setTimeout(() => {
+          this.setState({
+            loading: false
+          });
+        }, 2500);
       }
     });
   }
@@ -92,13 +99,18 @@ class App extends Component {
 
   handleLogout() {
     logout();
-    this.setState({ authed: false });
+    setTimeout(() => {
+      this.setState({
+        authed: false,
+        loading: true
+      });
+    }, 2500);
     this.handleOnClick();
   }
 
   render() {
     return this.state.loading === true ? (
-      <h1>cargando...</h1>
+      <Loader />
     ) : (
       <BrowserRouter>
         <div>
@@ -154,7 +166,7 @@ class App extends Component {
                     </li>
                     <li className="pure-menu-item">
                       <Link
-                        to="/logout"
+                        to="/login" //regresa a login
                         className="pure-menu-link"
                         onClick={this.handleLogout}
                       >
