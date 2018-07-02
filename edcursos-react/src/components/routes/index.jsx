@@ -75,13 +75,12 @@ class App extends Component {
     this.removeListener = firebaseAuth().onAuthStateChanged(user => {
       if (user) {
         setTimeout(() => {
-          console.log("en el login");
           this.setState({
             authed: true,
             loading: false
           });
         }, 2500);
-        this.setState({ loading: false });
+        this.setState({ loading: true });
       } else {
         setTimeout(() => {
           this.setState({
