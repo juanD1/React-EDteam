@@ -5,7 +5,7 @@ import {
   Route, //Manejo de rutas
   Link, //Manejo de enlaces
   Redirect, //Manejo de redirecciones
-  Switch
+  Switch //Interruptos
 } from "react-router-dom";
 import { firebaseAuth } from "../../data/config"; //config of firebase
 import { logout } from "../helpers/Auth";
