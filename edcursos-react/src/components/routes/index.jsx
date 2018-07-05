@@ -4,7 +4,6 @@ import {
   BrowserRouter, //Invocar el manejo de rutas
   Route, //Manejo de rutas
   Link, //Manejo de enlaces
-  Redirect, //Manejo de redirecciones
   Switch //Interruptos
 } from "react-router-dom";
 import { firebaseAuth } from "../../data/config"; //config of firebase
@@ -21,31 +20,9 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import DashboardCourses from "../pages/protected/DashboardCourses";
 import Loader from "../courses/global/Loader";
-
-//Setting private route
-const PrivateRoute = ({ component: Component, authed, rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      authed === true ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{ pathname: "/login", state: { from: props.location } }}
-        />
-      )
-    }
-  />
-);
-
-const PublicRoute = ({ component: Component, authed, rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      authed === false ? <Component {...props} /> : <Redirect to="/cursos" />
-    }
-  />
-);
+//Routes
+import PublicRoute from "./PublicRoute";
+import PrivateRoute from "./PrivateRoute";
 
 class App extends Component {
   constructor(props) {
