@@ -23,6 +23,7 @@ import Loader from "../courses/global/Loader";
 //Routes
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
+import Routes from "./Routes";
 
 class App extends Component {
   constructor(props) {
