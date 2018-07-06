@@ -10,7 +10,7 @@ import { firebaseAuth } from "../../data/config"; //config of firebase
 import { logout } from "../helpers/Auth";
 //Assets
 import "pure-css";
-import "./css/index.css";
+import "./index.css";
 import EDteamLogo from "../images/edteam-logo.png";
 //Components
 import Home from "../pages/";
@@ -23,7 +23,6 @@ import Loader from "../courses/global/Loader";
 //Routes
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
-import Routes from "./Routes"; //revisar mejor el codigo
 
 class App extends Component {
   constructor(props) {
