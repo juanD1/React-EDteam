@@ -6,23 +6,23 @@ import {
   Link, //Manejo de enlaces
   Switch //Interruptos
 } from "react-router-dom";
-import { firebaseAuth } from "../../data/config"; //config of firebase
-import { logout } from "../helpers/Auth";
+import { firebaseAuth } from "../data/config"; //config of firebase
+import { logout } from "../components/helpers/Auth";
 //Assets
 import "pure-css";
 import "./index.css";
-import EDteamLogo from "../images/edteam-logo.png";
+import EDteamLogo from "../components/images/edteam-logo.png";
 //Components
-import Home from "../pages/";
-import About from "../pages/About";
-import Error404 from "../pages/Error404";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import DashboardCourses from "../pages/protected/DashboardCourses";
-import Loader from "../courses/global/Loader";
+import Home from "../components/pages/";
+import About from "../components/pages/About";
+import Error404 from "../components/pages/Error404";
+import Login from "../components/pages/Login";
+import Register from "../components/pages/Register";
+import DashboardCourses from "../components/pages/protected/DashboardCourses";
+import Loader from "../components/courses/global/Loader";
 //Routes
-import PublicRoute from "./PublicRoute";
-import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./routes/PublicRoute";
+import PrivateRoute from "./routes/PrivateRoute";
 
 class App extends Component {
   constructor(props) {
