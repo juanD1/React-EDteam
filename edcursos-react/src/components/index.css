@@ -30,7 +30,13 @@
 
 .custom-menu .pure-menu-link:hover,
 .custom-menu .pure-menu-heading:hover {
-  background-color: transparent;
+  color: #25c9ff; /*aqui*/
+  background-color: #2279d7;
+}
+
+.custom-menu .pure-menu-link:focus {
+  color: #25c9ff;
+  background-color: #2279d7;
 }
 
 .custom-menu-top {
