@@ -35,8 +35,7 @@
 }
 
 .custom-menu .pure-menu-link:focus {
-  /*CLICKED*/
-  color: #25c9ff;
+  color: #25c9ff; /*CLICKED*/
   background-color: #2279d7;
 }
 
