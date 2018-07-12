@@ -38,7 +38,8 @@ class App extends Component {
   }
 
   handleOnClick(e) {
-    if (e.target === document.getElementById("toggle")) {
+    // if (e.target === document.getElementById("toggle")) {
+    if (e.target.id === "toggle") {
       e.preventDefault();
     }
     document
