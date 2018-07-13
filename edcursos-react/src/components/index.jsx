@@ -79,7 +79,7 @@ class App extends Component {
     setTimeout(() => {
       this.setState({
         authed: false,
-        loading: true
+        loading: true //ver loader
       });
     }, 2500);
     this.handleOnClick();
