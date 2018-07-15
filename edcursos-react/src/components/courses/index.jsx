@@ -72,7 +72,13 @@ class Courses extends Component {
     console.log(this.state.filter);
   }
 
-  handleOnFilter(filter, data) {}
+  handleOnFilter(filter, data) {
+    let regex = new RegExp(filter.search, "i");
+    return data.filter(
+      q =>
+        regex.test(q.name) || regex.test(q.teacher) || regex.test(q.categories)
+    );
+  }
 
   render() {
     if (!this.state.courses.length) {
