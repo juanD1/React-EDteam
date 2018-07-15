@@ -1,7 +1,8 @@
 import React from "react";
+//Assets
 import "./css/courses-search.css";
 
-const CoursesSearch = props => {
+const CoursesSearch = props => (
   <form className="pure-form SearchForm">
     <input
       type="search"
@@ -13,7 +14,7 @@ const CoursesSearch = props => {
     <label htmlFor="search">
       <i className="fa fa-search" />
     </label>
-  </form>;
-};
+  </form>
+);
 
 export default CoursesSearch;

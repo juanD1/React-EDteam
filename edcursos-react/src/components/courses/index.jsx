@@ -18,9 +18,17 @@ class Courses extends Component {
       courses: courses,
       categories: categories,
       teachers: teachers,
-      isLoading: false
+      isLoading: false,
+      filter: {
+        name: "",
+        teacher: "",
+        categories: [],
+        search: ""
+      }
     };
     this.handleOnAddCourse = this.handleOnAddCourse.bind(this);
+    this.handleOnSearch = this.handleOnSearch.bind(this);
+    this.handleOnFilter = this.handleOnFilter.bind(this);
   }
 
   handleOnAddCourse(e) {
@@ -53,6 +61,19 @@ class Courses extends Component {
     form.reset();
   }
 
+  handleOnSearch(e) {
+    let newFilter = Object.assign({}, this.state.filter, {
+      [e.target.name]: [e.target.value]
+    });
+    this.setState({
+      filter: newFilter
+    });
+
+    console.log(this.state.filter);
+  }
+
+  handleOnFilter(filter, data) {}
+
   render() {
     if (!this.state.courses.length) {
       return (
@@ -70,8 +91,13 @@ class Courses extends Component {
         return (
           <article className="Main-container">
             <CourseAddForm onAddCourse={this.handleOnAddCourse} />
-            <CoursesSearch />
-            <CoursesList courses={this.state.courses} />
+            <CoursesSearch onSearch={this.handleOnSearch} />
+            <CoursesList
+              courses={this.handleOnFilter(
+                this.state.filter,
+                this.state.courses
+              )}
+            />
           </article>
         );
       }
