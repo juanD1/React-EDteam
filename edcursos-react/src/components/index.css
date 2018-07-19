@@ -32,6 +32,7 @@
 .custom-menu .pure-menu-heading:hover {
   color: #25c9ff; /*aqui*/
   background-color: #2279d7;
+  text-decoration-line: underline;
 }
 
 .custom-menu .pure-menu-link:focus {
