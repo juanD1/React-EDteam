@@ -5,7 +5,6 @@ const Course = props => (
     <a className="CoursesList-link" href={props.url} target="_blank">
       <figure>
         <img src={props.poster} alt={props.name} />
-        <figcaption />
       </figure>
     </a>
     <section>
